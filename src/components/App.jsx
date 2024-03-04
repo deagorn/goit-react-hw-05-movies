@@ -1,9 +1,10 @@
 
 import Home from "pages/Home/Home";
-import Muvies from "pages/Muvies/Muvies";
 import NotFound from "pages/NotFound/NotFound";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
+import Movies from "pages/Movies/Movies";
+import MovieCard from "pages/MovieCard/MovieCard";
 
 export const App = () => {
   return (
@@ -11,13 +12,10 @@ export const App = () => {
      
       <Routes>
         <Route path="/" element={<Layout/>}>
-          <Route index element={<Home />} />            {/* домашня сторінка зі списком популярних кінофільмів. */}
-          <Route path="movies" element={<Muvies />} />  {/* Пошук за ключовим словом */}
-          {/* 
-          '/movies/:movieId' – компонент MovieDetails, сторінка з детальною інформацією про кінофільм.
-           /movies/:movieId/cast – компонент Cast, інформація про акторський склад. Рендериться на сторінці MovieDetails.
-           /movies/:movieId/reviews – компонент Reviews, інформація про огляди. Рендериться на сторінці MovieDetails
- */}
+          <Route index element={<Home />} />
+          <Route path="movies" element={<Movies />} />
+          <Route path="movies/:movieId" element={<MovieCard/>} />
+
         </Route>
         
         <Route path="*" element={<NotFound />} />
