@@ -1,0 +1,82 @@
+.container {
+display: flex;
+justify-content: center;
+}
+
+.container img {
+  margin-left: 20px;
+  width: 30%; /* Заповнюємо ширину колонки */
+  height: auto; /* Автоматична висота */
+  border-radius: 50px; /* Закруглені кути для картинки */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тінь */
+}
+
+.infoColumn {
+  margin-left: 20px; /* Відступ від лівого краю */
+  width: 40%;
+}
+
+.additionalInfoColumn {
+  margin-left: 20px; /* Відступ від лівого краю */
+  background-color: #247BA0; /* Фоновий колір */
+  color: #E8F1F2;
+  padding: 20px; /* Відступи від країв */
+  border-radius: 5px; /* Закруглені кути */
+}
+
+.additionalInfoColumn nav ul li {
+  margin-bottom: 10px; /* Відступ між елементами */
+}
+
+
+.additionalInfoColumn nav ul li a {
+  text-decoration: none; /* Відключаємо підкреслення посилань */
+  color: #E8F1F2; /* Колір посилань */
+  transition: color 0.3s; /* Плавна зміна кольору при наведенні */
+}
+
+.additionalInfoColumn nav ul li a:hover {
+  color: #13293D; /* Змінюємо колір при наведенні */
+}
+
+.title{
+    color: #333;
+    font-size: 34px; /* збільшено розмір тексту */
+    font-weight: bold;
+}
+
+.hTitle{
+    color: #333;
+    font-size: 24px; /* збільшено розмір тексту */
+    font-weight: bold;
+}
+
+.text{
+    color: #333;
+    font-size: 14px; /* збільшено розмір тексту */
+    font-weight:normal;
+}
+
+.genre{
+    color: #333;
+    font-size: 14px; /* збільшено розмір тексту */
+    font-weight:normal;
+    margin-right: 10px;
+    
+    border: 1px solid #ccc; /* Товщина та колір границі */
+    border-radius: 20px; /* Радіус заокруглення кутів */
+    padding: 5px 10px; /* Внутрішні відступи */
+}
+
+.additionalTitle{
+    font-size: 24px; /* збільшено розмір тексту */
+    font-weight: bold;
+}
+
+.link{
+    color: #333;
+    font-size: 14px; /* збільшено розмір тексту */
+    font-weight:bold;
+    text-align: left;
+    margin-bottom: 10px;
+}
