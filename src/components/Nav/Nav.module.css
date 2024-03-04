@@ -1,0 +1,29 @@
+.nav {
+  background-color: #006494; /* світло-синій */
+  padding: 10px; /* збільшено відступ */
+  margin-bottom: 10px;
+  display: flex; /* використовуємо flex-контейнер */
+  justify-content: center; 
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav ul li {
+  display: inline;
+  margin-right: 10px; /* збільшено відступ */
+}
+
+.nav ul li a {
+  color: #E8F1F2; /* стальний синій */
+  text-decoration: none;
+  font-size: 14px; /* збільшено розмір тексту */
+  font-weight: bold; /* збільшено товщину тексту */
+}
+
+.nav ul li a:hover {
+  color: #87ceeb; /* світло-синій */
+}
+

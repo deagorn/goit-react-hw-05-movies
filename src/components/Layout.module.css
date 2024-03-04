@@ -1,0 +1,13 @@
+.header {
+  background-color: #13293D; /* бурштиновий */
+  color: #E8F1F2; /* білий */
+  padding: 10px; /* збільшено відступ */
+  margin-bottom: 10px; /* збільшений відступ вниз */
+}
+
+/* Стилі для тексту */
+.text {
+  font-size: 12px; /* збільшено розмір тексту */
+  line-height: 1.5;
+  font-weight: bold; /* збільшено товщину тексту */
+}

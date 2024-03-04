@@ -1,0 +1,52 @@
+.container {
+  text-align: center;
+  padding: 0px 20px 0px;
+}
+
+.title {
+  color: #333;
+}
+
+.filmList {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 4 карти на сторінці, масштабується */
+  gap: 20px; /* відступ між карточками */
+}
+
+.filmItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filmButton {
+  background-color: #006494;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Розтягуємо кнопку на всю ширину батьківського елемента */
+  text-align: left; /* Вирівнюємо текст ліворуч */
+
+  font-size: 14px; /* збільшено розмір тексту */
+  font-weight: bold;
+}
+
+.filmButton:hover {
+  background-color: #13293D;
+  color: #fff;
+}
+
+.filmButton img {
+
+    padding-top: 15px;
+  width: 100%; /* Заповнюємо всю ширину кнопки */
+  height: auto; /* Забезпечуємо автоматичну висоту, щоб не спотворювати співвідношення сторін */
+}
