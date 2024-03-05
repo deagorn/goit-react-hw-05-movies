@@ -11,19 +11,31 @@ justify-content: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тінь */
 }
 
+.posterColumn{
+width: 30%; /* Заповнюємо ширину колонки */
+}
+
+.posterColumn img{
+  width: 90%; /* Заповнюємо ширину колонки */
+}
+
 .infoColumn {
   margin-left: 20px; /* Відступ від лівого краю */
   width: 30%;
 }
 
 .additionalInfoColumn {
-  width: 30%;
+  width: 20%;
   margin-left: 20px; /* Відступ від лівого краю */
   margin-right: 20px;
   background-color: #247BA0; /* Фоновий колір */
   color: #E8F1F2;
   padding: 20px; /* Відступи від країв */
   border-radius: 5px; /* Закруглені кути */
+  margin-bottom: 20px;
+
+  max-height:86vh; /* Максимальна висота контейнера */
+  overflow-y: auto;
 }
 
 .additionalInfoColumn nav ul li {
@@ -71,14 +83,14 @@ justify-content: center;
 }
 
 .additionalTitle{
-    font-size: 24px; /* збільшено розмір тексту */
+    font-size: 28px; /* збільшено розмір тексту */
     font-weight: bold;
     text-align: center;
 }
 
 .link{
     color: #333;
-    font-size: 14px; /* збільшено розмір тексту */
+    font-size: 18px; /* збільшено розмір тексту */
     font-weight:bold;
     text-align: left;
     margin-bottom: 10px;
@@ -88,15 +100,38 @@ justify-content: center;
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  
 }
 
 .actor{
   display: flex;
   text-align: center;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
+
+
 
 .additional{
   display: flex;
   font-size: 50px;
+}
+
+.name_cast{
+  
+  margin: 5px;
+  padding: 0;
+}
+
+.title_cast{
+  font-size: 14px; /* збільшено розмір тексту */
+    font-weight:normal;
+  margin: 5px;
+  padding: 0;
+}
+
+.poster{
+  max-height:86vh;
 }

@@ -26,9 +26,10 @@ if (!cast) {
                     <li key={item.id} className={styles.actor}>
                         {item.profile_path ? (
                             <img src={`https://image.tmdb.org/t/p/w500${item.profile_path}`} alt={item.name} />
-                        ) : (<img src="https://via.placeholder.com/320x450" alt="" className={styles.placeholder} />
-                                
+                        ) : (<img src="https://via.placeholder.com/320x450" alt="" className={styles.placeholder} />              
                         )}
+                        <h3 className={styles.name_cast}><span className={styles.title_cast}>Name:</span> {item.name}</h3>
+                        <h3 className={styles.name_cast}><span className={styles.title_cast}>Character:</span> {item.character}</h3>
                     </li>
                 )
                 )}

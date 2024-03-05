@@ -23,7 +23,9 @@ const MovieCard = () => {
 
   return (
     <div className={styles.container}>
-      <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title ? movie.title : movie.name} />
+      <div className={styles.posterColumn}>
+        <img className={styles.poster} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title ? movie.title : movie.name} />
+      </div>
       <div className={styles.infoColumn}>
         <h1  className={styles.title}>{movie.title ? movie.title : movie.name}</h1>
         <h2 className={styles.hTitle}>Overview</h2>
@@ -36,7 +38,7 @@ const MovieCard = () => {
       <div className={styles.additionalInfoColumn}>
         <h3 className={styles.additionalTitle}>Additional information</h3>
         <nav>
-          <ul lassName={styles.additional}>
+          <ul className={styles.additional}>
             <li>
               <NavLink className={styles.link} to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
             </li>

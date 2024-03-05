@@ -29,3 +29,12 @@ export const fetchMovieCredits  = async (movie_id) => {
     });
     return data.cast;
 }
+
+export const fetchMovieReviews  = async (movie_id) => {
+    const { data } = await axios.get(`movie/${movie_id}/reviews`, {
+        params: {
+            api_key: '342c44e6506dd01a98601164ba137553',
+        }
+    });
+    return data.results;
+}
