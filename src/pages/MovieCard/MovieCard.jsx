@@ -36,11 +36,11 @@ const MovieCard = () => {
       <div className={styles.additionalInfoColumn}>
         <h3 className={styles.additionalTitle}>Additional information</h3>
         <nav>
-          <ul>
+          <ul lassName={styles.additional}>
             <li>
-              <NavLink to={`/movies/${movieId}/cast`} className={styles.link}>Cast</NavLink>
               <NavLink className={styles.link} to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
             </li>
+            <li><NavLink to={`/movies/${movieId}/cast`} className={styles.link}>Cast</NavLink></li>
           </ul>
         </nav>
         <Outlet/>

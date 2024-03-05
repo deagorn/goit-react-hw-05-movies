@@ -5,19 +5,21 @@ justify-content: center;
 
 .container img {
   margin-left: 20px;
-  width: 30%; /* Заповнюємо ширину колонки */
-  height: auto; /* Автоматична висота */
+  width: 40%; /* Заповнюємо ширину колонки */
+  height:fit-content; /* Автоматична висота */
   border-radius: 50px; /* Закруглені кути для картинки */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тінь */
 }
 
 .infoColumn {
   margin-left: 20px; /* Відступ від лівого краю */
-  width: 40%;
+  width: 30%;
 }
 
 .additionalInfoColumn {
+  width: 30%;
   margin-left: 20px; /* Відступ від лівого краю */
+  margin-right: 20px;
   background-color: #247BA0; /* Фоновий колір */
   color: #E8F1F2;
   padding: 20px; /* Відступи від країв */
@@ -71,6 +73,7 @@ justify-content: center;
 .additionalTitle{
     font-size: 24px; /* збільшено розмір тексту */
     font-weight: bold;
+    text-align: center;
 }
 
 .link{
@@ -79,4 +82,21 @@ justify-content: center;
     font-weight:bold;
     text-align: left;
     margin-bottom: 10px;
+}
+
+.cast{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.actor{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.additional{
+  display: flex;
+  font-size: 50px;
 }
