@@ -8,8 +8,6 @@ const Layout = () => {
         <div>
             <header className={styles.header}>
                 <Nav />
-                <div className={styles.text}>React route</div>
-
             </header>
             <Outlet />
         </div>

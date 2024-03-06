@@ -1,19 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom';
 import { fetchMovieCredits } from 'services/api';
 import styles from './MovieCard.module.css';
+import useHttp from 'components/hooks/useHttp';
 
 const MovieCast = () => {
-const { movieId } = useParams();
-const [cast, setCast] = useState(null);
+  const { movieId } = useParams();
+  
+  const [cast] = useHttp(fetchMovieCredits, movieId);
 
-  useEffect(() => {
-    if (movieId) { 
-      fetchMovieCredits(movieId)
-        .then(data => setCast(data))
-        .catch(err => console.log(err));
-    }
-  }, [movieId]);
+
+// const [cast, setCast] = useState(null);
+
+  // useEffect(() => {
+  //   if (movieId) { 
+  //     fetchMovieCredits(movieId)
+  //       .then(data => setCast(data))
+  //       .catch(err => console.log(err));
+  //   }
+  // }, [movieId]);
     
 if (!cast) {
     return 'Loading...'
