@@ -1,12 +1,15 @@
 import Loader from 'components/Loader/Loader';
-import React from 'react';
-import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
+import React, { useRef } from 'react';
+import { Link, NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { fetchMovieDetails } from 'services/api';
 import styles from './MovieCard.module.css';
 import useHttp from 'components/hooks/useHttp';
 
 const MovieCard = () => {
   const { movieId } = useParams();
+
+  const location = useLocation();
+  const goBackRef = useRef(location.state?.from || '/')
 
   const [movie] = useHttp(fetchMovieDetails, movieId);
 
@@ -24,7 +27,7 @@ const MovieCard = () => {
 
   return (
     <div>
-      <Link to='/' className={styles.goBack}>Go back</Link>
+      <Link to={goBackRef.current} className={styles.goBack}>Go back</Link>
       <div className={styles.container}>
         <div className={styles.posterColumn}>
           <img className={styles.poster} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title ? movie.title : movie.name} />
