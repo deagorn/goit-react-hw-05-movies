@@ -26,13 +26,13 @@ if (!reviews) {
   return (
     <div>
       <ul className={styles.reviews}>
-                {reviews.map(item => (
+                {reviews.length>0? reviews.map(item => (
                     <li key={item.id} className={styles.review}>
                         <h2 className={styles.title}><span className={styles.name}>Name:</span> {item.author}</h2>
                         <h3 className={styles.review_text}> {item.content}</h3>
                     </li>
                 )
-                )}
+                ) : 'No search results'}
             </ul>
     </div>
   )
