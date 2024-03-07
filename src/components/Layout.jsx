@@ -8,6 +8,7 @@ const Layout = () => {
         <div>
             <header className={styles.header}>
                 <Nav />
+                
             </header>
             <Outlet />
         </div>

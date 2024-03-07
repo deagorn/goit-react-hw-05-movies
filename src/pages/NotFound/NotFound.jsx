@@ -8,7 +8,7 @@ const NotFound = () => {
       <div className="stars">
         <div className="central-body">
           <img className="image-404" src="http://salehriaz.com/404Page/img/404.svg" alt="404" width="300px" />
-          <Link to="/" className="btn-go-home" target="_blank" rel="noopener noreferrer">GO BACK HOME</Link>
+          <Link to="/" className="btn-go-home" >GO BACK HOME</Link>
         </div>
         <div className="objects">
           <img className="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" alt="rocket" width="40px" />
