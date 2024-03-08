@@ -1,14 +1,12 @@
 import  { useEffect, useState } from 'react'
 
-const useHttp = (fn, movieId) => {
-    const [page, setPage] = useState(1);
+const useHttpSearch = (fn, query, page) => {
     const [data, setData] = useState(null);
     const [total, setTotal] = useState(0);
-    console.log(data);
 
     useEffect(() => {
-        if (movieId) {
-            fn(movieId)
+        if (query) {
+            fn(query, page)
                 .then(data => {
                     if (page === 1) { setData([]) };
                     setData(prev => [...prev, ...data.results]);
@@ -17,9 +15,9 @@ const useHttp = (fn, movieId) => {
                 })
                 .catch(err => console.log(err));
         }
-    }, [fn, movieId, page]);
+    }, [fn, query, page]);
 
     return [data, setData, total, page];
 }
 
-export default useHttp
+export default useHttpSearch;

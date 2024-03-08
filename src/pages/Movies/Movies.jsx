@@ -1,17 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
-import useHttp from 'components/hooks/useHttp'
 import { fetchMovieSearch } from 'services/api';
 import styles from './Movies.module.css'
 import InputForm from './InputForm';
+import useHttpSearch from 'components/hooks/useHttpSearch';
+import { Button } from 'components/Button/Button';
+import Loader from 'components/Loader/Loader';
 
 
 const Movies = () => {
+  const [page, setPage] = useState(1);
   const location = useLocation();
   const [searchParams, setsearchParams] = useSearchParams();
   const query = searchParams.get('query') || ''
-  const [films, setFilm] = useHttp(fetchMovieSearch, query);
+  const [films, setFilm, total] = useHttpSearch(fetchMovieSearch, query, page);
+   const handleLoadMore = () => {
+    setPage(prev => prev + 1);
+  };
 
+   if (!films) {
+     return <InputForm setsearchParams={setsearchParams} />     
+  }
 
   return (
     <div className={styles.container}>
@@ -30,6 +39,7 @@ const Movies = () => {
             </Link>
           </li>))}
         </ul>
+        {films.length && films.length < total && <Button onClick={handleLoadMore} />}
       </div> : null}
       
     </div>
