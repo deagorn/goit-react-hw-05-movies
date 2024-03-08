@@ -16,7 +16,7 @@ const Nav = () => {
           <NavLink to='/movies'>Movies</NavLink>
         </li>
         <li>
-          {user} | <button onClick={logout}>Logout</button>
+          {user} | <button className={styles.logout} onClick={logout}>Logout</button>
 
         </li>
       </ul>
