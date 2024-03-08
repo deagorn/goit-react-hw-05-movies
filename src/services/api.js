@@ -38,3 +38,13 @@ export const fetchMovieReviews  = async (movie_id) => {
     });
     return data.results;
 }
+
+export const fetchMovieSearch  = async (query) => {
+    const { data } = await axios.get(`search/movie`, {
+        params: {
+            api_key: '342c44e6506dd01a98601164ba137553',
+            query, 
+        }
+    });
+    return data.results;
+}

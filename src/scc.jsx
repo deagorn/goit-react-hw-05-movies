@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import useHttp from 'components/hooks/useHttp'
 import { fetchMovieSearch } from 'services/api';
@@ -10,7 +10,7 @@ const Movies = () => {
   const location = useLocation();
   const [searchParams, setsearchParams] = useSearchParams();
   const query = searchParams.get('query') || ''
-  const [films, setFilm] = useHttp(fetchMovieSearch, query);
+  const [films, setFilm, total] = useHttp(fetchMovieSearch, query);
 
 
   return (
@@ -28,8 +28,10 @@ const Movies = () => {
                 (<img src="https://via.placeholder.com/320x450" alt="" className={styles.placeholder} />
                 )}
             </Link>
-          </li>))}
+          </li>)
+          )}
         </ul>
+        {/* {films.length && films.length < totalImg && <Button onClick={handleLoadMore} />} */}
       </div> : null}
       
     </div>

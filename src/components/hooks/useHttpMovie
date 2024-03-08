@@ -1,0 +1,25 @@
+import  { useEffect, useState } from 'react'
+
+const useHttp = (fn, movieId) => {
+    const [page, setPage] = useState(1);
+    const [data, setData] = useState(null);
+    const [total, setTotal] = useState(0);
+    console.log(data);
+
+    useEffect(() => {
+        if (movieId) {
+            fn(movieId)
+                .then(data => {
+                    if (page === 1) { setData([]) };
+                    setData(prev => [...prev, ...data.results]);
+                    setTotal(data.total_results)
+
+                })
+                .catch(err => console.log(err));
+        }
+    }, [fn, movieId, page]);
+
+    return [data, setData, total, page];
+}
+
+export default useHttp
