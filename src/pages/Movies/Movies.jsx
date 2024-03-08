@@ -5,7 +5,6 @@ import styles from './Movies.module.css'
 import InputForm from './InputForm';
 import useHttpSearch from 'components/hooks/useHttpSearch';
 import { Button } from 'components/Button/Button';
-import Loader from 'components/Loader/Loader';
 
 
 const Movies = () => {
@@ -13,7 +12,7 @@ const Movies = () => {
   const location = useLocation();
   const [searchParams, setsearchParams] = useSearchParams();
   const query = searchParams.get('query') || ''
-  const [films, setFilm, total] = useHttpSearch(fetchMovieSearch, query, page);
+  const [films, total] = useHttpSearch(fetchMovieSearch, query, page);
    const handleLoadMore = () => {
     setPage(prev => prev + 1);
   };

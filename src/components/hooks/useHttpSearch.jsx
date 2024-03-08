@@ -17,7 +17,7 @@ const useHttpSearch = (fn, query, page) => {
         }
     }, [fn, query, page]);
 
-    return [data, setData, total, page];
+    return [data, total, page];
 }
 
 export default useHttpSearch;
